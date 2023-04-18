@@ -1,0 +1,322 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', arial;
+}
+a{
+    text-decoration: none;
+}
+body{
+    background-color: grey;
+}
+#container{
+    margin: 0 auto;
+    font-size: 10px;
+}
+nav{
+    background-color: #fff;
+    margin: 0 auto;
+    top: 50px;
+    height: 100px;
+    position: relative;
+}
+ul#ikony i{
+    font-size: 4rem;
+    color: black;
+}
+ul#ikony li{
+    display: inline-block;
+    margin: 15px 20px 0px 20px;
+}
+ul#menu li{
+    float: right;
+    display: block;
+    position: relative;
+    margin: auto 15px auto 15px;
+    text-align: center;
+    transition: 1s;
+    top: -70px;
+    color: black;
+}
+ul#menu li i{
+    font-size: 3rem;
+    position: relative;
+    transition: 1s;
+}
+ul#menu li p{
+    font-size: 1rem;
+    position: relative;
+    opacity: 0;
+    transition: 1s;
+}
+ul#menu li.active i{
+transform: translateY(-40px);
+}
+ul#menu li.active p{
+opacity: 1;
+}
+ul#menu li.active div{
+    background-color: green;
+    border-radius: 50%;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: -60px;
+    left: -23px;
+    border: 10px solid grey;
+    transition: all 1s ease-out, border-radius 0s;
+}
+ul#menu li:nth-child(1){
+    margin-right: 30px;
+}
+ul#menu li:hover p{
+    opacity: 1;
+    transform: translateY(10px);
+}
+ul#menu li.active:hover p{
+    opacity: 1;
+    transform: translateY(0px);
+}
+header div:nth-child(1) img{
+    position: relative;
+    display: block;
+    margin: 100px auto 0 auto;
+    height: 300px;
+    width: 600px;
+}
+header div#obraz div:nth-child(1){
+    height: 300px;
+    width: 60%;
+    display: flex;
+    background: url("obraz.jpg");
+    background-size: cover;
+    margin: 50px auto 0 auto;
+}
+header #obraz div:nth-child(3){
+    height: 300px;
+    width: 60%;
+    display: flex;
+    background: url("obraz.jpg") center;
+    background-size: cover;
+    margin: 50px auto 0 auto;
+    opacity: 60%;
+}
+header #obraz h1{
+    text-align: center;
+    margin: 50px auto 0 auto;
+    font-size: 2.7rem;
+}
+header #obraz h2{
+    text-align: center;
+    margin: 20px auto 0 auto;
+    width: 40%;
+    font-size: 1.3rem;
+    line-height: 50px;
+}
+button{
+    margin: 200px auto 0 auto;
+    width: 200px;
+    height: 50px;
+    background: #000;
+    color: white;
+    cursor: pointer;
+    font-size: 1.3rem;
+    opacity: 0;
+    transition: 1s;
+}
+header #obraz div:nth-child(1):hover button{
+    opacity: 70%;
+}
+header ul li{
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    margin: 0 5px;
+    background-color: rgb(68, 67, 67);
+    transition: 1s;
+    cursor: pointer;
+}
+header ul li:hover{
+    opacity: 50%;
+}
+header ul{
+    display: flex;
+    justify-content: center;
+}
+header div#tekst{
+    margin: 10px auto;
+    width: 40%;
+}
+header div#tekst div h1, header div#tekst div h2, header div#tekst div h3{
+    text-align: center;
+    margin: 10px 0;
+}
+#formularz{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: #a3a1a1;
+    margin-top: 20px;
+}
+#formularz .form{
+    width: 200px;
+    height: 50px;
+    margin: 0 5px;
+}
+#formularz p{
+    display: flex;
+    background-color: black;
+    cursor: pointer;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+}
+#zdjecia{
+    width: 60%;
+    height: 1000px;
+    background-color: #fff;
+    margin: 0 auto;
+    padding: 50px;
+}
+#zdjecia div:first-child{
+    width: 60%;
+    height: 300px;
+    background-color: #bbb6b6;
+}
+#zdjecia div:last-child{
+    float: right;
+    height: 700px;
+    width: 35%;
+    margin-top: -825px;
+    display: flex;
+    justify-content: center;
+    align-items:last baseline;
+}
+#zdjecia div:last-child ul{
+    position:relative;
+    transform: skewY(-15deg);
+    scale: 1.4;
+}
+#zdjecia div:last-child ul li:hover::before{
+    background: #1f5378;
+}
+#zdjecia div:last-child ul li::before{
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: -40px;
+    width: 40px;
+    height: 100%;
+    background: #3e3f46;
+    transform-origin: right;
+    transform: skewY(45deg);
+    transition: 0.5s;
+}
+#zdjecia div:last-child ul li:hover::after{
+    background: #2982b9;
+}
+#zdjecia div:last-child ul li::after{
+    content: " ";
+    position: absolute;
+    top: -40px;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background: #35383e;
+    transform-origin: bottom;
+    transform: skewX(45deg);
+    transition: 0.5s;
+}
+#zdjecia div:last-child ul li:hover{
+    background: #33a3ee;
+    transform: translateX(-50px);
+}
+#zdjecia div:last-child ul li{
+    position:relative;
+    list-style: none;
+    width: 200px;
+    background: #3e3f46;
+    padding: 15px;
+    z-index: var(--i);
+    transition: 0.5s;
+}
+#zdjecia div:last-child ul li a{
+    text-decoration: none;
+    color: #999;
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+}
+#zdjecia div:last-child ul li:hover a{
+    color: white;
+}
+@keyframes slide{
+0%{
+    opacity: 1;
+}
+33%{
+    opacity: 0;
+}
+66%{
+    opacity: 0;
+}
+100%{
+    opacity: 0;
+}
+}
+#zdjecia div:nth-child(1) img:nth-child(1){
+    animation: slide infinite linear 15s reverse;
+}
+#zdjecia div:nth-child(1) img:nth-child(2){
+    animation: slide infinite linear 15s 5s reverse;
+    opacity: 0;
+}
+#zdjecia div:nth-child(1) img:nth-child(3){
+    animation: slide infinite linear 15s 10s reverse;
+    opacity: 1;
+}
+#zdjecia div:nth-child(1) img{
+    width: 610px;
+    height: 300px;
+    position: absolute;
+}
+#zdjecia div:nth-child(2){
+    width: 60%;
+    height: 500px;
+    margin-top: 25px;
+}
+#zdjecia div:nth-child(2) ul{
+    list-style-type: none;
+}
+#zdjecia div:nth-child(2) li{
+    width: 230px;
+    height: 230px;
+    background: rgb(151, 151, 151);
+    margin: 10px;
+    float: left;
+    cursor: pointer;
+}
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}

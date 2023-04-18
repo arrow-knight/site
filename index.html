@@ -1,0 +1,104 @@
+<!--    inftechpl.wixsite.com/home  nauczanie_informatyczne/webmasterowanie/projekt_zaliczeniowy_css    -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script src="https://kit.fontawesome.com/f5b426cca7.js" crossorigin="anonymous"></script>
+        <meta charset="UTF-8">
+        <title>Budowlanka</title>
+        <link rel="stylesheet" href="index.css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <meta name="keywords" content="Budowa, remont, malowanie, elektryka, hydraulika">
+        <meta name="description" content="Strona firmy budowlanej.">
+        <meta name="author" content="Konrad Ciernia">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div id="container">
+        <nav>
+            <ul id="ikony">
+                <a href="http://www.zsel1.pl"><li><i class="fa-brands fa-discord"></i></li></a>
+                <a href="http://www.zsel1.pl"><li><i class="fa-brands fa-facebook"></i></li></a>
+                <a href="http://www.zsel1.pl"><li><i class="fa-brands fa-tiktok"></i></li></a>
+            </ul>
+            <ul id="menu">
+                <a href="profil.html"><li class="list"><div></div><i class="fa-solid fa-user"></i><p>PROFIL</p></li></a>
+                <a href="contact.html"><li class="list"><div></div><i class="fa-solid fa-phone"></i><p>KONTAKT</p></li></a>
+                <a href="aboutUs.html"><li class="list"><div></div><i class="fa-solid fa-address-card"></i><p>O NAS</p></li></a>
+                <a href="offer.html"><li class="list"><div></div><i class="fa-sharp fa-solid fa-file"></i><p>OFERTA</p></li></a>
+                <a href="#"><li class="list active"><div></div><i class="fa-solid fa-house"></i><p>HOME</p></li></a>
+            </ul>
+        </nav>
+        <header>
+            <div><img src="png/logo.png" alt="logo"></div>
+            <div id="obraz">
+                <div>
+                    <button>Zobacz Więcej</button>
+                </div>
+                <div>
+                    <h1>Nasze usługi</h1>
+                    <h2>Remonty i przebudowy<br>
+                        Malowanie i dekorowanie (ozdabianie) wnętrz<br>
+                        Usługi elektryczne<br>
+                        Usługi hydrauliczne<br>
+                        Kosztorysowanie i prace stolarskie na zamówienie<br>
+                        oraz wiele innych usług!</h2>
+                </div>
+                <div></div>
+            </div>
+            <div id="tekst">
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+                <div>
+                    <h1>Lorem ipsum dolor sit amet.</h1>
+                    <h2>Lorem ipsum dolor sit amet.</h2>
+                    <h3>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam asperiores iusto quis quaerat tempora esse quae debitis, assumenda, aut voluptas, alias repellat recusandae nobis ipsa temporibus eaque dignissimos neque! Tempora!</h3>
+                </div>
+            </div>
+        </header>
+        <div id="formularz">
+            <input class="form" type="text">
+            <input class="form" type="text">
+            <p class="form">Zapisz Mnie</p>
+        </div>
+        <div id="zdjecia">
+            <div>
+                <img src="png/budowa1.jfif" alt="1"><img src="png/budowa2.jfif" alt="2"><img src="png/budowa3.jfif" alt="3">
+            </div>
+            <div>
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li style="--i:5;"><a href="index.html">HOME</a></li>
+                    <li style="--i:4;"><a href="offer.html">OFERTA</a></li>
+                    <li style="--i:3;"><a href="aboutUs.html">O NAS</a></li>
+                    <li style="--i:2;"><a href="contact.html">KONTAKT</a></li>
+                    <li style="--i:1;"><a href="profil.html">PROFIL</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="footherNav"></div>
+        <foother></foother>
+        <script>
+        const list = document.querySelectorAll('.list');
+            function activeLink(){
+                list.forEach(item => item.classList.remove('active'));
+                this.classList.add('active');
+              }
+              list.forEach(item =>
+                item.addEventListener('click', activeLink))
+                </script>
+                </div>
+                <footer>
+                    <p>&copy; 2023 NONE. Wszelkie prawa zastrzeżone.</p>
+                </footer>
+    </body>
+</html>

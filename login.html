@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    :root { 
+        --clr: #222327;
+    }
+
+    body {
+        display: flex;
+        margin-top: 40px;
+        background: var(--clr); 
+    }
+    /* Pasek Nawigacji */
+    .navbarfixed{
+        background: var(--clr);
+        width: 100%;
+        height: 70px;
+        position: fixed;
+    }
+    .navigation {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-right: 45px;
+    }
+
+        .navigation ul {
+            display: flex;
+            width: 350px;
+        }
+
+            .navigation ul li {
+                position: relative;
+                list-style: none;
+                width: 70px;
+                height: 70px;
+                z-index: 1;
+            }
+
+                .navigation ul li a {
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center; 
+                    flex-direction: column;
+                    width: 100%;
+                    text-align: center;
+                    font-weight: 500;
+                }
+
+                    .navigation ul li a .icon {
+                        position: relative;
+                        display: block;
+                        line-height: 75px;
+                        font-size: 1.5em;
+                        text-align: center;
+                        transition: 0.5s;
+                        color: var(--clr);
+                    }
+
+                .navigation ul li.active a .icon {
+                    transform: translateY(-32px);
+                }
+
+                .navigation ul li a .text {
+                    position: absolute;
+                    color: var(--clr);
+                    font-weight: 400;
+                    font-size: 0.75em;
+                    letter-spacing: 0.05em;
+                    transition: 0.5s;
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+
+                .navigation ul li.active a .text {
+                    opacity: 1;
+                    transform: translateY(10px);
+                }
+
+    .indicator {
+        position: absolute;
+        top: -50%;
+        width: 70px;
+        height: 70px;
+        background: #29fd53;
+        border-radius: 50%;
+        border: 6px solid var(--clr);
+        transition: 0.5s;
+    }
+
+        .indicator::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: -22px;
+            width: 20px;
+            height: 20px;
+            background: transparent;
+            border-top-right-radius: 20px;
+            box-shadow: 1px -10px 0 0 var(--clr);
+        }
+
+        .indicator::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -22px;
+            width: 20px;
+            height: 20px;
+            background: transparent;
+            border-top-left-radius: 20px;
+            box-shadow: -1px -10px 0 0 var(--clr);
+        }
+
+    .navigation ul li:nth-child(1).active ~ .indicator {
+        transform: translateX(calc(70px * 0));
+    }
+
+    .navigation ul li:nth-child(2).active ~ .indicator {
+        transform: translateX(calc(70px * 1));
+    }
+
+    .navigation ul li:nth-child(3).active ~ .indicator {
+        transform: translateX(calc(70px * 2));
+    }
+
+    .navigation ul li:nth-child(4).active ~ .indicator {
+        transform: translateX(calc(70px * 3));
+    }
+
+    .navigation ul li:nth-child(5).active ~ .indicator {
+        transform: translateX(calc(70px * 4));
+    }
+    /* Logowanie */
+    .box {
+        position: absolute;
+        right: calc(50% - 165px);
+        top: 150px;
+        width: 380px;
+        height: 850px;
+        background: #1c1c1c;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+        .box::before {
+            content: '';
+            z-index: 1;
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 380px;
+            height: 850px;
+            transform-origin: bottom right;
+            background: linear-gradient(0deg,transparent,#45f3ff,#45f3ff);
+            animation: animate 6s linear infinite;
+        }
+
+        .box::after {
+            content: '';
+            z-index: 1;
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 380px;
+            height: 850px;
+            transform-origin: bottom right;
+            background: linear-gradient(0deg,transparent,#45f3ff,#45f3ff);
+            animation: animate 6s linear infinite;
+            animation-delay: -3s;
+        }
+
+    @keyframes animate {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    form {
+        position: absolute;
+        inset: 2px;
+        background: #28292d;
+        padding: 50px 40px;
+        border-radius: 8px;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+    }
+
+    h2 {
+        color: #45f3ff;
+        font-weight: 500;
+        text-align: center;
+        letter-spacing: 0.1em;
+    }
+
+    .inputBox {
+        position: relative;
+        width: 300px;
+        margin-top: 35px;
+    }
+
+        .inputBox input {
+            position: relative;
+            width: 100%;
+            padding: 20px 10px 10px;
+            background: transparent;
+            outline: none;
+            box-shadow: none;
+            border: none;
+            color: #23242a;
+            font-size: 1em;
+            letter-spacing: 0.05em;
+            transition: 0.5s;
+            z-index: 10;
+        }
+
+        .inputBox span {
+            position: absolute;
+            left: 0;
+            padding: 20px 0px 10px;
+            pointer-events: none;
+            font-size: 1em;
+            color: #8f8f8f;
+            letter-spacing: 0.05em;
+            transition: 0.5s;
+        }
+
+        .inputBox input:valid ~ span,
+        .inputBox input:focus ~ span {
+            color: #45f3ff;
+            transform: translateX(0px) translateY(-34px);
+            font-size: 0.75em;
+        }
+
+        .inputBox i {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 2px;
+            background: #45f3ff;
+            border-radius: 4px;
+            overflow: hidden;
+            transition: 0.5s;
+            pointer-events: none;
+            z-index: 9;
+        }
+
+        .inputBox input:valid ~ i,
+        .inputBox input:focus ~ i {
+            height: 44px;
+        }
+
+    .links {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+        .links a {
+            margin: 10px 0;
+            font-size: 0.75em;
+            color: #45f3ff;
+            text-decoration: beige;
+        }
+
+            .links a:hover {
+                color: #8f8f8f;
+            }
+
+    input[type="submit"] {
+        border: none;
+        outline: none;
+        padding: 11px 25px;
+        background: #45f3ff;
+        cursor: pointer;
+        border-radius: 4px;
+        font-weight: 600;
+        width: 100px;
+        margin-top: 10px;
+    }
+
+        input[type="submit"]:active {
+            opacity: 0.8;
+        }
+</style>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Camprent</title>
+</head>
+
+<body>
+    <div class="navbarfixed">
+    <div class="navigation">
+        <ul>
+            <li class="list">
+                <a href="index.html">
+                    <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                    <span class="text">Home</span>
+                </a>
+            </li>
+
+            <li class="list active">
+                <a href="#">
+                    <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                    <span class="text">Profile</span>
+                </a>
+            </li>
+            <div class="indicator"></div>
+        </ul>
+    </div>
+</div>
+
+    <div class="box">
+        <form autocomplete="off">
+            <h2>Login</h2>
+            <div class="inputBox">
+                <input type="text" required="required">
+                <span>Login</span>
+                <i></i>
+            </div>
+            <div class="inputBox">
+                <input type="password" required="required">
+                <span>Haslo</span>
+                <i></i>
+            </div>
+            <div class="links">
+                <a href="profil.html">Nie masz jeszcze konta?</a>
+            </div>
+            <input type="submit" value="Login">
+        </form>
+    </div>
+    <script>
+        const list = document.querySelectorAll('.list');
+        function activeLink() {
+            list.forEach(item => item.classList.remove('active'));
+            this.classList.add('active');
+        }
+        list.forEach(item =>
+            item.addEventListener('click', activeLink))
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    
+</body>
+
+</html>
